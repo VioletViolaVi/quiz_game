@@ -1,0 +1,17 @@
+/**************************************************** custom default */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  cursor: default;
+  background-color: #f4bbff;
+}
+
+/**************************************************** header */
+
+/**************************************************** section */
