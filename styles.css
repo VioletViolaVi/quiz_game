@@ -1,16 +1,46 @@
 /**************************************************** custom default */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Red Hat Display', sans-serif;
+  text-align: center;
+  list-style: none;
 }
 
 body {
   text-align: center;
   cursor: default;
+  background-image: linear-gradient(to right, #fcffa4, #ffffe0);
 }
 
-/**************************************************** header */
+/**************************************************** title */
+.title h1 {
+  font-size: 3rem;
+  color: #648c11;
+  margin-top: 5rem;
+}
 
-/**************************************************** section */
+/**************************************************** sub title */
+.sub-title h2 {
+  font-size: 2rem;
+  color: #1c2841;
+  margin-top: 2rem;
+}
+
+/**************************************************** questions */
+.answer-options {
+  display: grid;
+  grid-template-columns: auto;
+  margin-top: 3rem;
+}
+
+.answer-options li {
+  font-size: 2rem;
+  background-color: #66cdaa;
+  margin-bottom: 0.5rem;
+  border: 0.1rem solid #1a1110;
+  cursor: pointer;
+}
