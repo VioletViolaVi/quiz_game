@@ -13,3 +13,7 @@ This is a quiz game where users are asked a range of questions. Users are shown 
 - [GitHub](https://github.com/)
 - [Font Awesome](https://fontawesome.com/)
 - [VS Code](https://code.visualstudio.com/)
+
+# Credits
+
+- [The quiz was styled based on this image](https://res.cloudinary.com/practicaldev/image/fetch/s--JnhCcuhM--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/tm4qz7twcxsvuqr78j9y.png)
