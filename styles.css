@@ -32,6 +32,19 @@ body {
 
 /**************************************************** timer */
 .timer-box {
+  background-color: #f8de7e;
+  width: 7rem;
+  height: 3rem;
+  padding: 0.5rem 0.3rem;
+  border-radius: 0.5rem;
+  margin: auto;
+  display: grid;
+  align-items: center;
+}
+
+.timer-box p{
+  font-size: 1.2rem;
+  font-weight: 900;
 }
 
 /**************************************************** questions */
