@@ -24,20 +24,20 @@ body {
 }
 
 /**************************************************** sub title */
-.sub-title h2 {
+.question h2 {
   font-size: 2rem;
   color: #1c2841;
   margin-top: 2rem;
 }
 
 /**************************************************** questions */
-.answer-options {
+.options {
   display: grid;
   grid-template-columns: auto;
   margin-top: 3rem;
 }
 
-.answer-options li {
+.options li {
   font-size: 2rem;
   background-color: #66cdaa;
   margin-bottom: 0.5rem;
