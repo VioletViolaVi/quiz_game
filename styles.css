@@ -79,10 +79,34 @@ body {
 }
 
 /**************************************************** remaining questions */
-.remaining-questions {
+.question-num {
+  margin-top: 1rem;
   font-size: 1.2rem;
 }
 
-.remaining-questions span {
+.question-num span {
+  font-weight: 900;
+}
+
+/**************************************************** next btn */
+.next-btn-section {
+  margin: 0.5rem 0 1rem;
+}
+
+.next-btn-section button {
+  font-size: 1.2rem;
+  cursor: pointer;
+  outline: none;
+  width: 4.5rem;
+  height: 3rem;
+  background-color: #f8de7e;
+  border: solid 0.2rem #fdee00;
+  border-radius: 2rem;
+}
+
+.next-btn-section button:hover {
+  background-color: #fdee00;
+  border: solid 0.2rem #f8de7e;
+  transition: 0.2s;
   font-weight: 900;
 }
