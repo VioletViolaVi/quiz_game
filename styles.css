@@ -77,3 +77,12 @@ body {
   font-weight: 900;
   transition: 0.2s;
 }
+
+/**************************************************** remaining questions */
+.remaining-questions {
+  font-size: 1.2rem;
+}
+
+.remaining-questions span {
+  font-weight: 900;
+}
