@@ -13,24 +13,35 @@
 body {
   text-align: center;
   cursor: default;
+  background-color: #fff5ee;
+}
+
+/**************************************************** quiz border */
+.quiz-border {
   background-image: linear-gradient(to right, #fcffa4, #ffffe0);
+  border-radius: 1rem;
+  border: solid 0.5rem #f0e68c;
+  margin: 5.67rem 0.5rem;
 }
 
 /**************************************************** title */
 .title h1 {
   font-size: 3rem;
-  color: #648c11;
-  margin-top: 5rem;
+  color: #a3a300;
 }
 
-/**************************************************** sub title */
+/**************************************************** timer */
+.timer-box {
+}
+
+/**************************************************** questions */
 .question h2 {
   font-size: 2rem;
   color: #1c2841;
   margin-top: 2rem;
 }
 
-/**************************************************** questions */
+/**************************************************** options */
 .options {
   display: grid;
   grid-template-columns: auto;
