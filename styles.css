@@ -8,6 +8,7 @@
   font-family: 'Red Hat Display', sans-serif;
   text-align: center;
   list-style: none;
+  color: #1c2841;
 }
 
 body {
@@ -42,29 +43,37 @@ body {
   align-items: center;
 }
 
-.timer-box p{
+.timer-box p {
   font-size: 1.2rem;
   font-weight: 900;
 }
 
 /**************************************************** questions */
+.question {
+  margin: 1rem 0.5rem;
+}
+
 .question h2 {
   font-size: 2rem;
-  color: #1c2841;
-  margin-top: 2rem;
 }
 
 /**************************************************** options */
 .options {
-  display: grid;
-  grid-template-columns: auto;
-  margin-top: 3rem;
+  margin: 0 0.5rem;
 }
 
 .options li {
+  background-color: #ffffe0;
+  border: 0.1rem solid #fada5e;
+  border-radius: 2rem;
   font-size: 2rem;
-  background-color: #66cdaa;
-  margin-bottom: 0.5rem;
-  border: 0.1rem solid #1a1110;
   cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.options li:hover {
+  background-color: #fada5e;
+  border: 0.1rem solid #ffffe0;
+  font-weight: 900;
+  transition: 0.2s;
 }
