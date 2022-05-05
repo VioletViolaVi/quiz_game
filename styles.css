@@ -22,7 +22,7 @@ body {
   background-image: linear-gradient(to right, #fcffa4, #ffffe0);
   border-radius: 1rem;
   border: solid 0.5rem #f0e68c;
-  margin: 5.67rem 0.5rem;
+  margin: 4.38rem 0.5rem;
 }
 
 /**************************************************** title */
@@ -100,13 +100,12 @@ body {
   width: 4.5rem;
   height: 3rem;
   background-color: #f8de7e;
-  border: solid 0.2rem #fdee00;
+  border: none;
   border-radius: 2rem;
 }
 
 .next-btn-section button:hover {
   background-color: #fdee00;
-  border: solid 0.2rem #f8de7e;
   transition: 0.2s;
   font-weight: 900;
 }
