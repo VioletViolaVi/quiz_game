@@ -1,23 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   // gets selected choice
   const selectedAnswer = () => {
-    // options arr
+    // stores arr of options
     const allOptionsArr = document.getElementsByClassName('options')
 
-    // selects 1 by 1
+    // selects 1 option
     for (let i = 0; i < allOptionsArr.length; i++) {
       // single option
       const singleOption = allOptionsArr[i]
 
-      // answers to questions
-      const questionAndAnswer = {
-        question: 'What colour added to yellow makes green?',
-        answer: 'blue',
-      }
+      // answers to questions function
+      allQuestionsAndAnswers()
 
       singleOption.addEventListener('click', () => {
         // change option's bg colour
-        if (singleOption.innerHTML === questionAndAnswer.answer) {
+        if (singleOption.innerHTML === allQuestionsAndAnswers().answer) {
           singleOption.style.backgroundColor = '#3fff00'
         } else {
           singleOption.style.backgroundColor = '#ff0800'
@@ -26,6 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   selectedAnswer()
+
+  function allQuestionsAndAnswers() {
+    const questionAndAnswer = {
+      question: 'What colour added to yellow makes green?',
+      answer: 'blue',
+    }
+    return questionAndAnswer
+  }
 
   // clears answer for next question
   const nextQuestion = () => {
