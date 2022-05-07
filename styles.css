@@ -25,27 +25,36 @@ body {
   margin: 4.38rem 0.5rem;
 }
 
+@media (min-width: 600px) {
+  .quiz-border {
+    margin: 9.46rem 1rem;
+  }
+}
+
 /**************************************************** title */
 .title h1 {
   font-size: 3rem;
   color: #a3a300;
 }
 
+@media (min-width: 600px) {
+  .title h1 {
+    font-size: 4rem;
+  }
+}
+
 /**************************************************** timer */
-.timer-box {
+.timer-box p {
   background-color: #f8de7e;
   width: 7rem;
   height: 3rem;
   padding: 0.5rem 0.3rem;
   border-radius: 0.5rem;
   margin: auto;
-  display: grid;
-  align-items: center;
-}
-
-.timer-box p {
   font-size: 1.2rem;
   font-weight: 900;
+  display: grid;
+  align-items: center;
 }
 
 /**************************************************** questions */
@@ -78,6 +87,14 @@ body {
   transition: 0.2s;
 }
 
+@media (min-width: 600px) {
+  .options ol {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 0.5%;
+  }
+}
+
 /**************************************************** remaining questions */
 .question-num {
   margin-top: 1rem;
@@ -108,4 +125,13 @@ body {
   background-color: #fdee00;
   transition: 0.2s;
   font-weight: 900;
+}
+
+/**************************************************** response header */
+@media (min-width: 600px) {
+  .tablet-size {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+  }
 }
