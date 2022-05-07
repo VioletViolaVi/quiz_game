@@ -6,7 +6,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Red Hat Display', sans-serif;
-  text-align: center;
   list-style: none;
   color: #1c2841;
 }
@@ -27,7 +26,8 @@ body {
 
 @media (min-width: 600px) {
   .quiz-border {
-    margin: 9.46rem 1rem;
+    margin: 7.64rem 1rem;
+    padding: 1rem 0.5rem;
   }
 }
 
@@ -57,6 +57,23 @@ body {
   align-items: center;
 }
 
+@media (min-width: 600px) {
+  .timer-box p {
+    width: 8.5rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+/**************************************************** response header */
+@media (min-width: 600px) {
+  .response-header {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+  }
+}
+
 /**************************************************** questions */
 .question {
   margin: 1rem 0.5rem;
@@ -64,6 +81,12 @@ body {
 
 .question h2 {
   font-size: 2rem;
+}
+
+@media (min-width: 600px) {
+  .question h2 {
+    font-size: 2.5rem;
+  }
 }
 
 /**************************************************** options */
@@ -91,18 +114,32 @@ body {
   .options ol {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-column-gap: 0.5%;
+    grid-column-gap: 3%;
+    justify-content: space-around;
+    justify-items: stretch;
+  }
+
+  .options li {
+    border: 0.2rem solid #fada5e;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
 }
 
-/**************************************************** remaining questions */
-.question-num {
+/**************************************************** question tracker */
+.question-tracker p {
   margin-top: 1rem;
   font-size: 1.2rem;
 }
 
-.question-num span {
+.question-tracker span {
   font-weight: 900;
+}
+
+@media (min-width: 600px) {
+  .question-tracker p {
+    font-size: 2rem;
+  }
 }
 
 /**************************************************** next btn */
@@ -127,11 +164,20 @@ body {
   font-weight: 900;
 }
 
-/**************************************************** response header */
 @media (min-width: 600px) {
-  .tablet-size {
+  .next-btn-section button {
+    font-size: 2rem;
+    width: 6.5rem;
+    height: 3.5rem;
+  }
+}
+
+/**************************************************** response footer */
+@media (min-width: 600px) {
+  .responsive-footer {
     display: grid;
-    grid-template-columns: 70% 30%;
-    align-items: center;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+    align-items: baseline;
   }
 }
