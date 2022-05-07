@@ -92,11 +92,11 @@ body {
 }
 
 /**************************************************** options */
-.options {
+.options-bg {
   margin: 0 0.5rem;
 }
 
-.options li {
+.options-bg li {
   background-color: #ffffe0;
   border: 0.1rem solid #fada5e;
   border-radius: 2rem;
@@ -105,7 +105,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.options li:hover {
+.options-bg li:hover {
   background-color: #fada5e;
   border: 0.1rem solid #ffffe0;
   font-weight: 900;
@@ -113,7 +113,7 @@ body {
 }
 
 @media (min-width: 600px) {
-  .options ol {
+  .options-bg ol {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-column-gap: 1rem;
@@ -121,13 +121,13 @@ body {
     justify-items: stretch;
   }
 
-  .options li {
+  .options-bg li {
     border-width: 0.2rem;
     font-size: 2.5rem;
     margin-bottom: 1rem;
   }
 
-  .options li:hover {
+  .options-bg li:hover {
     border-width: 0.2rem;
   }
 }
