@@ -11,7 +11,6 @@ This is a quiz game where users are asked a range of questions. Users are shown 
 - [Google Fonts](https://fonts.google.com/)
 - [Git](https://git-scm.com/)
 - [GitHub](https://github.com/)
-- [Font Awesome](https://fontawesome.com/)
 - [VS Code](https://code.visualstudio.com/)
 
 # Credits
