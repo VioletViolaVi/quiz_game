@@ -27,11 +27,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   selectedAnswer()
 
+  // clears answer for next question
+  const nextQuestion = () => {
+    const nextBtn = document.getElementById('nextBtn')
+    const optionA = document.getElementById('optionA')
+    const optionB = document.getElementById('optionB')
+    const optionC = document.getElementById('optionC')
+    const optionD = document.getElementById('optionD')
 
-  // next question
-  const nextQuestion = () => {}
-
-  
-
-  singleOption.style.backgroundColor = '#ffffe0'
+    nextBtn.addEventListener('click', () => {
+      optionA.style.backgroundColor = '#ffffe0'
+      optionB.style.backgroundColor = '#ffffe0'
+      optionB.style.backgroundColor = '#ffffe0'
+      optionC.style.backgroundColor = '#ffffe0'
+      optionD.style.backgroundColor = '#ffffe0'
+    })
+  }
+  nextQuestion()
 })
