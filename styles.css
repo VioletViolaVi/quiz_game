@@ -132,18 +132,15 @@ body {
   }
 }
 
-/**************************************************** question tracker */
-.question-tracker p {
+/**************************************************** score */
+.score p {
   margin-top: 1rem;
   font-size: 1.2rem;
-}
-
-.question-tracker span {
   font-weight: 900;
 }
 
 @media (min-width: 600px) {
-  .question-tracker p {
+  .score p {
     font-size: 2rem;
   }
 }
@@ -182,7 +179,7 @@ body {
 @media (min-width: 600px) {
   .responsive-footer {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: auto auto;
     grid-column-gap: 6rem;
     align-items: stretch;
     justify-content: center;
