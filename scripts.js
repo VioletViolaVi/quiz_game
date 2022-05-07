@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
   // gets selected choice
   const selectedAnswer = () => {
     // options arr
@@ -7,59 +6,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // selects 1 by 1
     for (let i = 0; i < allOptionsArr.length; i++) {
+      // single option
       const singleOption = allOptionsArr[i]
 
+      // answers to questions
+      const questionAndAnswer = {
+        question: 'What colour added to yellow makes green?',
+        answer: 'blue',
+      }
+
       singleOption.addEventListener('click', () => {
-        console.log(singleOption.innerHTML)
+        // change option's bg colour
+        if (singleOption.innerHTML === questionAndAnswer.answer) {
+          singleOption.style.backgroundColor = '#3fff00'
+        } else {
+          singleOption.style.backgroundColor = '#ff0800'
+        }
       })
     }
   }
-  selectedAnswer();
+  selectedAnswer()
 
 
+  // next question
+  const nextQuestion = () => {}
 
+  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // questions & answers obj
-  /*const questionAndAnswer = {
-    question: 'What colour added to yellow makes green?',
-    answer: 'blue',
-  }*/
-
-  /*// gets 1st choice
-  const optionA = document.getElementById('optionA')
-  optionA.addEventListener('click', () => {
-    console.log(optionA.innerText)
-  })
-
-  // gets 2nd choice
-  const optionB = document.getElementById('optionB')
-  optionB.addEventListener('click', () => {
-    console.log(optionB.innerText)
-  })
-
-  // gets 3rd choice
-  const optionC = document.getElementById('optionC')
-  optionC.addEventListener('click', () => {
-    console.log(optionC.innerText)
-  })
-
-  // gets 4th choice
-  const optionD = document.getElementById('optionD')
-  optionD.addEventListener('click', () => {
-    console.log(optionD.innerText)
-  }) */
+  singleOption.style.backgroundColor = '#ffffe0'
 })
