@@ -7,12 +7,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // stores answers & questions
   function allQuestionsAndAnswers() {
-    const questionAndAnswer = {
-      question: "What colour added to yellow makes green?",
-      answer: "blue",
-    };
+    const questionAndAnswer = [
+      {
+        id: 1,
+        question: "What colour added to yellow makes green?",
+        answer: "blue",
+        wrongOption1: "red",
+        wrongOption2: "orange",
+        wrongOption3: "brown",
+      },
+      {
+        id: 2,
+        question: "What is the largest country in Asia?",
+        answer: "China",
+        wrongOption1: "Singapore",
+        wrongOption2: "Japan",
+        wrongOption3: "Thailand",
+      },
+      {
+        id: 3,
+        question: "How many eggs are in a dozen?",
+        answer: 12,
+        wrongOption1: 34,
+        wrongOption2: 7,
+        wrongOption3: 65,
+      },
+      {
+        id: 4,
+        question: "What is the square root of 676",
+        answer: 26,
+        wrongOption1: 24,
+        wrongOption2: 20,
+        wrongOption3: 22,
+      },
+      {
+        id: 5,
+        question: "Which is the largest planet in the solar system?",
+        answer: "Jupiter",
+        wrongOption1: "Mars",
+        wrongOption2: "Pluto",
+        wrongOption3: "Earth",
+      },
+    ];
     return questionAndAnswer;
   }
+
+  // gets random question pack
+  function changeQuestion() {
+    const questionArr = allQuestionsAndAnswers();
+    
+    
+    
+    console.log();
+  }
+  changeQuestion();
 
   // gets selected choice
   function selectedAnswer() {
