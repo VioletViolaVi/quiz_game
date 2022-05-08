@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // returns answers to questions
+  // options by id
+  const optionA = document.getElementById("optionA");
+  const optionB = document.getElementById("optionB");
+  const optionC = document.getElementById("optionC");
+  const optionD = document.getElementById("optionD");
+
+  // stores answers & questions
   function allQuestionsAndAnswers() {
     const questionAndAnswer = {
       question: "What colour added to yellow makes green?",
@@ -18,36 +24,44 @@ document.addEventListener("DOMContentLoaded", () => {
       // single option
       const singleOption = allOptionsArr[i];
 
-      // calls function
+      // calls obj function
       allQuestionsAndAnswers();
 
       singleOption.addEventListener("click", () => {
         // change option's bg colour
         if (singleOption.innerHTML === allQuestionsAndAnswers().answer) {
           singleOption.style.backgroundColor = "#3fff00";
+          optionA.style.pointerEvents = "none";
+          optionB.style.pointerEvents = "none";
+          optionC.style.pointerEvents = "none";
+          optionD.style.pointerEvents = "none";
         } else {
           singleOption.style.backgroundColor = "#ff0800";
           document.getElementById("optionA").style.backgroundColor = "#3fff00";
+          optionA.style.pointerEvents = "none";
+          optionB.style.pointerEvents = "none";
+          optionC.style.pointerEvents = "none";
+          optionD.style.pointerEvents = "none";
         }
       });
     }
   }
   selectedAnswer();
 
-  // clears answer for next question
   function nextQuestion() {
-    const nextBtn = document.getElementById("nextBtn");
-    const optionA = document.getElementById("optionA");
-    const optionB = document.getElementById("optionB");
-    const optionC = document.getElementById("optionC");
-    const optionD = document.getElementById("optionD");
-
     nextBtn.addEventListener("click", () => {
+      // clears answer colours for next question
       optionA.style.backgroundColor = "#ffffe0";
       optionB.style.backgroundColor = "#ffffe0";
       optionB.style.backgroundColor = "#ffffe0";
       optionC.style.backgroundColor = "#ffffe0";
       optionD.style.backgroundColor = "#ffffe0";
+
+      // brings back clicking ability
+      optionA.style.pointerEvents = "auto";
+      optionB.style.pointerEvents = "auto";
+      optionC.style.pointerEvents = "auto";
+      optionD.style.pointerEvents = "auto";
     });
   }
   nextQuestion();
