@@ -11,42 +11,57 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         id: 1,
         question: "What colour added to yellow makes green?",
-        answer: "blue",
-        wrongOption1: "red",
-        wrongOption2: "orange",
-        wrongOption3: "brown",
+        answer: "d",
+        choices: {
+          a: "red",
+          b: "orange",
+          c: "brown",
+          d: "blue",
+        },
       },
       {
         id: 2,
         question: "What is the largest country in Asia?",
-        answer: "China",
-        wrongOption1: "Singapore",
-        wrongOption2: "Japan",
-        wrongOption3: "Thailand",
+        answer: "b",
+        choices: {
+          a: "Singapore",
+          b: "China",
+          c: "Thailand",
+          d: "Japan",
+        },
       },
       {
         id: 3,
         question: "How many eggs are in a dozen?",
-        answer: 12,
-        wrongOption1: 34,
-        wrongOption2: 7,
-        wrongOption3: 65,
+        answer: "d",
+        choices: {
+          a: 34,
+          b: 7,
+          c: 65,
+          d: 12,
+        },
       },
       {
         id: 4,
-        question: "What is the square root of 676",
-        answer: 26,
-        wrongOption1: 24,
-        wrongOption2: 20,
-        wrongOption3: 22,
+        question: "What is the square root of 676?",
+        answer: "c",
+        choices: {
+          a: 24,
+          b: 22,
+          c: 26,
+          d: 20,
+        },
       },
       {
         id: 5,
         question: "Which is the largest planet in the solar system?",
-        answer: "Jupiter",
-        wrongOption1: "Mars",
-        wrongOption2: "Pluto",
-        wrongOption3: "Earth",
+        answer: "a",
+        choices: {
+          a: "Jupiter",
+          b: "Pluto",
+          c: "Earth",
+          d: "Mars",
+        },
       },
     ];
     return questionAndAnswer;
@@ -55,9 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // gets random question pack
   function changeQuestion() {
     const questionArr = allQuestionsAndAnswers();
-    
-    
-    
+
     console.log();
   }
   changeQuestion();
