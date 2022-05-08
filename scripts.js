@@ -30,19 +30,19 @@ document.addEventListener("DOMContentLoaded", () => {
       singleOption.addEventListener("click", () => {
         // change option's bg colour
         if (singleOption.innerHTML === allQuestionsAndAnswers().answer) {
+          // right answer
           singleOption.style.backgroundColor = "#3fff00";
-          optionA.style.pointerEvents = "none";
-          optionB.style.pointerEvents = "none";
-          optionC.style.pointerEvents = "none";
-          optionD.style.pointerEvents = "none";
         } else {
+          // wrong answer
           singleOption.style.backgroundColor = "#ff0800";
-          document.getElementById("optionA").style.backgroundColor = "#3fff00";
-          optionA.style.pointerEvents = "none";
-          optionB.style.pointerEvents = "none";
-          optionC.style.pointerEvents = "none";
-          optionD.style.pointerEvents = "none";
+          optionA.style.backgroundColor = "#3fff00";
         }
+
+        // turn off clicking
+        optionA.style.pointerEvents = "none";
+        optionB.style.pointerEvents = "none";
+        optionC.style.pointerEvents = "none";
+        optionD.style.pointerEvents = "none";
       });
     }
   }
