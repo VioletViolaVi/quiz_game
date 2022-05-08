@@ -87,10 +87,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // calls obj function
       allQuestionsAndAnswers();
+      console.log(allQuestionsAndAnswers()[0].answer);
+      console.log(singleOption.innerHTML);
+      console.log(singleOption.innerHTML === allQuestionsAndAnswers()[0].answer);
 
       singleOption.addEventListener("click", () => {
         // change option's bg colour
-        if (singleOption.innerHTML === allQuestionsAndAnswers().answer) {
+        if (singleOption.innerHTML === allQuestionsAndAnswers()[0].answer) {
           // right answer
           singleOption.style.backgroundColor = "#3fff00";
         } else {
