@@ -23,6 +23,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   countDownTimer();
 
+  // clears options for next question
+  function nextQuestion() {
+    nextBtn.addEventListener("click", () => {
+      // clears answer colours
+      optionA.style.backgroundColor = "#ffffe0";
+      optionB.style.backgroundColor = "#ffffe0";
+      optionB.style.backgroundColor = "#ffffe0";
+      optionC.style.backgroundColor = "#ffffe0";
+      optionD.style.backgroundColor = "#ffffe0";
+
+      // brings back clicking ability
+      optionA.style.pointerEvents = "auto";
+      optionB.style.pointerEvents = "auto";
+      optionC.style.pointerEvents = "auto";
+      optionD.style.pointerEvents = "auto";
+    });
+  }
+  nextQuestion();
+
   // options by id
   const optionA = document.getElementById("optionA");
   const optionB = document.getElementById("optionB");
@@ -137,22 +156,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   selectedAnswer();
-
-  function nextQuestion() {
-    nextBtn.addEventListener("click", () => {
-      // clears answer colours for next question
-      optionA.style.backgroundColor = "#ffffe0";
-      optionB.style.backgroundColor = "#ffffe0";
-      optionB.style.backgroundColor = "#ffffe0";
-      optionC.style.backgroundColor = "#ffffe0";
-      optionD.style.backgroundColor = "#ffffe0";
-
-      // brings back clicking ability
-      optionA.style.pointerEvents = "auto";
-      optionB.style.pointerEvents = "auto";
-      optionC.style.pointerEvents = "auto";
-      optionD.style.pointerEvents = "auto";
-    });
-  }
-  nextQuestion();
 });
