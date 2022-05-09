@@ -1,4 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // countdown timer
+  function countDownTimer() {
+    let timer = 60;
+    const htmlTimer = document.getElementById("htmlTimer");
+
+    // counts down
+    const movingTimer = setInterval(() => {
+      timer -= 1;
+      htmlTimer.innerHTML = timer;
+
+      // last 10 secs changes to red
+      if (timer <= 10) {
+        htmlTimer.style.color = "#ff0800";
+      }
+
+      // stops counting @ 0
+      if (timer === 0) {
+        clearInterval(movingTimer);
+        htmlTimer.style.color = "#1c2841";
+      }
+    }, 1000);
+  }
+  countDownTimer();
+
   // options by id
   const optionA = document.getElementById("optionA");
   const optionB = document.getElementById("optionB");
@@ -66,21 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
     return questionAndAnswer;
   }
-
-  // countdown timer
-  function countDownTimer() {
-    // counts down 1 minute
-    let timer = 60;
-    const movingTimer = setInterval(() => {
-      timer -= 1;
-      document.getElementById("htmlCountDownTimer").innerHTML = timer;
-      // stops counter & 0
-      if (timer === 0) {
-        clearInterval(movingTimer);
-      }
-    }, 1000);
-  }
-  countDownTimer();
 
   // gets random question pack
   function changeQuestion() {
