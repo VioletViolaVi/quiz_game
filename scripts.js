@@ -67,6 +67,21 @@ document.addEventListener("DOMContentLoaded", () => {
     return questionAndAnswer;
   }
 
+  // countdown timer
+  function countDownTimer() {
+    // counts down 1 minute
+    let timer = 60;
+    const movingTimer = setInterval(() => {
+      timer -= 1;
+      document.getElementById("htmlCountDownTimer").innerHTML = timer;
+      // stops counter & 0
+      if (timer === 0) {
+        clearInterval(movingTimer);
+      }
+    }, 1000);
+  }
+  countDownTimer();
+
   // gets random question pack
   function changeQuestion() {
     const questionArr = allQuestionsAndAnswers();
@@ -89,7 +104,9 @@ document.addEventListener("DOMContentLoaded", () => {
       allQuestionsAndAnswers();
       console.log(allQuestionsAndAnswers()[0].answer);
       console.log(singleOption.innerHTML);
-      console.log(singleOption.innerHTML === allQuestionsAndAnswers()[0].answer);
+      console.log(
+        singleOption.innerHTML === allQuestionsAndAnswers()[0].answer
+      );
 
       singleOption.addEventListener("click", () => {
         // change option's bg colour
