@@ -110,14 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return questionAndAnswer;
   }
 
-  // gets random question pack
-  function changeQuestion() {
-    const questionArr = allQuestionsAndAnswers();
-
-    console.log();
-  }
-  changeQuestion();
-
   // gets selected choice
   function selectedAnswer() {
     // stores arr of options
