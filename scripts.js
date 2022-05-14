@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const optionD = document.getElementById("optionD");
 
   // stores answers & questions
-  function allQuestionsAndAnswers() {
-    const questionAndAnswer = [
+  // function allQuestions() {
+    const questionObjArr = [
       {
         id: 1,
         question: "What colour added to yellow makes green?",
@@ -107,9 +107,44 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       },
     ];
-    return questionAndAnswer;
-  }
+    // return questionObjArr;
+  // }
 
+  function buildQuiz() {
+    // stores html output
+    const displayHtmlOutput = [];
+
+    // for each question object
+    questionObjArr.forEach((questionObj) => {
+      // stores possible answers
+      const possibleAnswers = [];
+
+      // for each possible answer
+      for (const letter in questionObj.possibleAnswers) {
+        // add to html
+        possibleAnswers.push(
+          `
+            <li>
+            ${letter} : ${questionObj.possibleAnswers[answer]}
+            </li>
+          `
+        );
+        // add question & answers to html output
+        displayHtmlOutput.push(
+          `
+            <h2>${questionObj.question}</h2>
+            <li>${possibleAnswers.join("")}</li>
+          `
+        );
+
+        // delete later
+        console.log(letter);
+      }
+    });
+  }
+  buildQuiz();
+
+  /*
   // gets selected choice
   function selectedAnswer() {
     // stores arr of options
@@ -121,16 +156,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const singleOption = allOptionsArr[i];
 
       // calls obj function
-      allQuestionsAndAnswers();
-      console.log(allQuestionsAndAnswers()[0].answer);
+      allQuestions();
+      console.log(allQuestions()[0].answer);
       console.log(singleOption.innerHTML);
       console.log(
-        singleOption.innerHTML === allQuestionsAndAnswers()[0].answer
+        singleOption.innerHTML === allQuestions()[0].answer
       );
 
       singleOption.addEventListener("click", () => {
         // change option's bg colour
-        if (singleOption.innerHTML === allQuestionsAndAnswers()[0].answer) {
+        if (singleOption.innerHTML === allQuestions()[0].answer) {
           // right answer
           singleOption.style.backgroundColor = "#3fff00";
         } else {
@@ -148,4 +183,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   selectedAnswer();
+  */
 });
