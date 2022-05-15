@@ -113,18 +113,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // for each question object
     questionObjArr.forEach((currentQuestion, questionNumber) => {
-      
       // stores possible answers
       const possibleAnswers = [];
 
       // for each possible answer
-      for (const aBCOrD in currentQuestion.choices) {
-
+      for (const aBCOrDKey in currentQuestion.choices) {
         // add to html
         possibleAnswers.push(
           `
-            <li>
-            ${aBCOrD} : ${currentQuestion.choices[aBCOrD]}
+            <li class="options">
+              ${currentQuestion.choices[aBCOrDKey]}
             </li>
           `
         );
@@ -141,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
         quizContainer.innerHTML = displayHtmlOutput.join("");
 
         // delete later
-        console.log(aBCOrD);
+        console.log(aBCOrDKey);
       }
     });
   }
