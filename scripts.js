@@ -25,19 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // clears options for next question
   function nextQuestion() {
+    const nextBtn = document.getElementById("nextBtn");
     nextBtn.addEventListener("click", () => {
       // clears answer colours
-      optionA.style.backgroundColor = "#ffffe0";
-      optionB.style.backgroundColor = "#ffffe0";
-      optionB.style.backgroundColor = "#ffffe0";
-      optionC.style.backgroundColor = "#ffffe0";
-      optionD.style.backgroundColor = "#ffffe0";
+      // optionA.style.backgroundColor = "#ffffe0";
+      // optionB.style.backgroundColor = "#ffffe0";
+      // optionB.style.backgroundColor = "#ffffe0";
+      // optionC.style.backgroundColor = "#ffffe0";
+      // optionD.style.backgroundColor = "#ffffe0";
 
       // brings back clicking ability
-      optionA.style.pointerEvents = "auto";
-      optionB.style.pointerEvents = "auto";
-      optionC.style.pointerEvents = "auto";
-      optionD.style.pointerEvents = "auto";
+      document.getElementById("bodyId").style.pointerEvents = "auto";
     });
   }
   nextQuestion();
@@ -164,6 +162,8 @@ document.addEventListener("DOMContentLoaded", () => {
           document.getElementById("nextBtn").style.pointerEvents = "auto";
         } else {
           selectedChoice.style.backgroundColor = "#ff0800";
+          document.getElementById("bodyId").style.pointerEvents = "none";
+          document.getElementById("nextBtn").style.pointerEvents = "auto";
         }
       });
     }
