@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         id: 1,
         question: "What colour added to yellow makes green?",
-        answer: "d",
+        answer: "blue",
         choices: {
           a: "brown",
           b: "orange",
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         id: 2,
         question: "What is the largest country in Asia?",
-        answer: "b",
+        answer: "China",
         choices: {
           a: "Singapore",
           b: "China",
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         id: 3,
         question: "How many eggs are in a dozen?",
-        answer: "d",
+        answer: 12,
         choices: {
           a: 34,
           b: 7,
@@ -86,24 +86,24 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         id: 4,
-        question: "What is the square root of 676?",
-        answer: "c",
-        choices: {
-          a: 24,
-          b: 22,
-          c: 26,
-          d: 20,
-        },
-      },
-      {
-        id: 5,
         question: "Which is the largest planet in the solar system?",
-        answer: "a",
+        answer: "Jupiter",
         choices: {
           a: "Jupiter",
           b: "Pluto",
           c: "Earth",
           d: "Mars",
+        },
+      },
+      {
+        id: 5,
+        question: "What is the square root of 676?",
+        answer: 26,
+        choices: {
+          a: 24,
+          b: 22,
+          c: 26,
+          d: 20,
         },
       },
     ];
@@ -147,6 +147,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   buildQuiz();
+
+  function checkForCorrectAnswer() {
+    // choices arr via classes
+    const choicesArr = document.getElementsByClassName("options");
+
+    // checking if clicked choice is correct via iterating through choices arr
+    for (let i = 0; i < choicesArr.length; i++) {
+      const selectedChoice = choicesArr[i];
+      selectedChoice.addEventListener("click", function () {
+        if (selectedChoice.innerText === entireQuestionObjArr()[0].answer) {
+          // change colour if right
+          selectedChoice.style.backgroundColor = "#3fff00";
+          // remove clicking ability except for next btn
+          document.getElementById("bodyId").style.pointerEvents = "none";
+          document.getElementById("nextBtn").style.pointerEvents = "auto";
+        } else {
+          selectedChoice.style.backgroundColor = "#ff0800";
+        }
+      });
+    }
+  }
+  checkForCorrectAnswer();
 
   /*
   // gets selected choice
