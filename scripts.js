@@ -108,11 +108,38 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   function buildQuiz() {
-    // stores html questions & answers output
-    const displayHtmlOutput = [];
-
+    // stores question
+    const theQuestion = [];
+    
     // for each question object
-    questionObjArr.forEach((currentQuestion, questionNumber) => {
+    questionObjArr.forEach((currentQuestion) => {
+      // add to html
+      theQuestion.push(`${currentQuestion.question}`);
+
+      // combine output & put on html page
+      const questionContainer = document.getElementById("questionContainer");
+      questionContainer.innerText = theQuestion.join("");
+
+      console.log(theQuestion);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // stores html answers output
+      const displayHtmlOutput = [];
+
       // stores possible answers
       const possibleAnswers = [];
 
@@ -120,26 +147,23 @@ document.addEventListener("DOMContentLoaded", () => {
       for (const aBCOrDKey in currentQuestion.choices) {
         // add to html
         possibleAnswers.push(
-          `
-            <li class="options">
+          `<li class="options">
               ${currentQuestion.choices[aBCOrDKey]}
             </li>
           `
         );
-        // add question & answers to html output
+
+        // add answers to html output
         displayHtmlOutput.push(
-          `
-            <h2>${currentQuestion.question}</h2>
-            <li>${possibleAnswers.join("")}</li>
+          `<li class="options">
+              ${possibleAnswers.join("")}
+            </li>
           `
         );
 
         // combine output & put on html page
-        const quizContainer = document.getElementById("quizContainer");
-        quizContainer.innerHTML = displayHtmlOutput.join("");
-
-        // delete later
-        console.log(aBCOrDKey);
+        const choicesContainer = document.getElementById("choicesContainer");
+        choicesContainer.innerHTML = possibleAnswers.join("");
       }
     });
   }
