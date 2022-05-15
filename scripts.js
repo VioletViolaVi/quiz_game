@@ -49,63 +49,67 @@ document.addEventListener("DOMContentLoaded", () => {
   const optionD = document.getElementById("optionD");
 
   // stores answers & questions
-  const questionObjArr = [
-    {
-      id: 1,
-      question: "What colour added to yellow makes green?",
-      answer: "d",
-      choices: {
-        a: "brown",
-        b: "orange",
-        c: "red",
-        d: "blue",
+  function entireQuestionObjArr() {
+    const questionObjArr = [
+      {
+        id: 1,
+        question: "What colour added to yellow makes green?",
+        answer: "d",
+        choices: {
+          a: "brown",
+          b: "orange",
+          c: "red",
+          d: "blue",
+        },
       },
-    },
-    {
-      id: 2,
-      question: "What is the largest country in Asia?",
-      answer: "b",
-      choices: {
-        a: "Singapore",
-        b: "China",
-        c: "Thailand",
-        d: "Japan",
+      {
+        id: 2,
+        question: "What is the largest country in Asia?",
+        answer: "b",
+        choices: {
+          a: "Singapore",
+          b: "China",
+          c: "Thailand",
+          d: "Japan",
+        },
       },
-    },
-    {
-      id: 3,
-      question: "How many eggs are in a dozen?",
-      answer: "d",
-      choices: {
-        a: 34,
-        b: 7,
-        c: 65,
-        d: 12,
+      {
+        id: 3,
+        question: "How many eggs are in a dozen?",
+        answer: "d",
+        choices: {
+          a: 34,
+          b: 7,
+          c: 65,
+          d: 12,
+        },
       },
-    },
-    {
-      id: 4,
-      question: "What is the square root of 676?",
-      answer: "c",
-      choices: {
-        a: 24,
-        b: 22,
-        c: 26,
-        d: 20,
+      {
+        id: 4,
+        question: "What is the square root of 676?",
+        answer: "c",
+        choices: {
+          a: 24,
+          b: 22,
+          c: 26,
+          d: 20,
+        },
       },
-    },
-    {
-      id: 5,
-      question: "Which is the largest planet in the solar system?",
-      answer: "a",
-      choices: {
-        a: "Jupiter",
-        b: "Pluto",
-        c: "Earth",
-        d: "Mars",
+      {
+        id: 5,
+        question: "Which is the largest planet in the solar system?",
+        answer: "a",
+        choices: {
+          a: "Jupiter",
+          b: "Pluto",
+          c: "Earth",
+          d: "Mars",
+        },
       },
-    },
-  ];
+    ];
+
+    return questionObjArr;
+  }
 
   function buildQuiz() {
     // stores question
@@ -115,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const arrOfChoicesArr = [];
 
     // for each question object
-    questionObjArr.forEach((currentQuestionObj) => {
+    entireQuestionObjArr().forEach((currentQuestionObj) => {
       // add to html
       theQuestion.push(`${currentQuestionObj.question}`);
 
