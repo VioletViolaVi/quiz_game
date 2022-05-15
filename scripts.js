@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
       question: "What colour added to yellow makes green?",
       answer: "d",
       choices: {
-        a: "red",
+        a: "brown",
         b: "orange",
-        c: "brown",
+        c: "red",
         d: "blue",
       },
     },
@@ -110,59 +110,36 @@ document.addEventListener("DOMContentLoaded", () => {
   function buildQuiz() {
     // stores question
     const theQuestion = [];
-    
+
+    // stores arr of possible answers arr
+    const arrOfChoicesArr = [];
+
     // for each question object
-    questionObjArr.forEach((currentQuestion) => {
+    questionObjArr.forEach((currentQuestionObj) => {
       // add to html
-      theQuestion.push(`${currentQuestion.question}`);
+      theQuestion.push(`${currentQuestionObj.question}`);
 
       // combine output & put on html page
       const questionContainer = document.getElementById("questionContainer");
       questionContainer.innerText = theQuestion[0];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      // stores html answers output
-      const displayHtmlOutput = [];
-
       // stores possible answers
       const possibleAnswers = [];
 
       // for each possible answer
-      for (const aBCOrDKey in currentQuestion.choices) {
+      for (const aBCOrDKey in currentQuestionObj.choices) {
         // add to html
         possibleAnswers.push(
-          `<li class="options">
-              ${currentQuestion.choices[aBCOrDKey]}
-            </li>
-          `
+          `<li class="options">${currentQuestionObj.choices[aBCOrDKey]}</li>`
         );
-
-        // add answers to html output
-        displayHtmlOutput.push(
-          `<li class="options">
-              ${possibleAnswers.join("")}
-            </li>
-          `
-        );
-
-        // combine output & put on html page
-        const choicesContainer = document.getElementById("choicesContainer");
-        choicesContainer.innerHTML = possibleAnswers.join("");
       }
+
+      // combine output & put on html page
+      const choicesContainer = document.getElementById("choicesContainer");
+      choicesContainer.innerHTML = arrOfChoicesArr[0];
+
+      // console.log(possibleAnswers);
+      arrOfChoicesArr.push(possibleAnswers.join(""));
     });
   }
   buildQuiz();
