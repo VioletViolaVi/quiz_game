@@ -93,12 +93,12 @@ document.addEventListener("DOMContentLoaded", () => {
       // brings back clicking ability
       document.getElementById("bodyId").style.pointerEvents = "auto";
 
+      // choices arr via classes
+      const choicesArr = document.getElementsByClassName("options");
       // clears answer colours
-      // optionA.style.backgroundColor = "#ffffe0";
-      // optionB.style.backgroundColor = "#ffffe0";
-      // optionB.style.backgroundColor = "#ffffe0";
-      // optionC.style.backgroundColor = "#ffffe0";
-      // optionD.style.backgroundColor = "#ffffe0";
+      for (let i = 0; i < choicesArr.length; i++) {
+        choicesArr[i].id = "none";
+      }
     });
   }
   nextQuestion();
@@ -152,12 +152,14 @@ document.addEventListener("DOMContentLoaded", () => {
       selectedChoice.addEventListener("click", function () {
         if (selectedChoice.innerText === entireQuestionObjArr()[0].answer) {
           // change colour if right
-          selectedChoice.style.backgroundColor = "#3fff00";
+          selectedChoice.id = "correct";
           // remove clicking ability except for next btn
           document.getElementById("bodyId").style.pointerEvents = "none";
           document.getElementById("nextBtn").style.pointerEvents = "auto";
         } else {
-          selectedChoice.style.backgroundColor = "#ff0800";
+          // change colour if wrong
+          selectedChoice.id = "wrong";
+          // remove clicking ability except for next btn
           document.getElementById("bodyId").style.pointerEvents = "none";
           document.getElementById("nextBtn").style.pointerEvents = "auto";
         }
