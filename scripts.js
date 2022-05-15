@@ -118,9 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // combine output & put on html page
       const questionContainer = document.getElementById("questionContainer");
-      questionContainer.innerText = theQuestion.join("");
-
-      console.log(theQuestion);
+      questionContainer.innerText = theQuestion[0];
 
 
 
