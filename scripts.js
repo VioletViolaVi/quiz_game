@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const choicesArr = document.getElementsByClassName("options");
       // clears answer colours
       for (let i = 0; i < choicesArr.length; i++) {
-        choicesArr[i].id = "none";
+        choicesArr[i].removeAttribute("id");
       }
     });
   }

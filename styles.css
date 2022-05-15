@@ -120,11 +120,6 @@ body {
   background-color: #ff0800;
 }
 
-/* #reset {
-  background-color: #ffffe0;
-  border: 0.1rem solid #fada5e;
-} */
-
 @media (min-width: 600px) {
   .options-bg ol {
     display: grid;
