@@ -1,51 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // countdown timer
-  function countDownTimer() {
-    let timer = 60;
-    const htmlTimer = document.getElementById("htmlTimer");
-
-    // counts down
-    const movingTimer = setInterval(() => {
-      timer -= 1;
-      htmlTimer.innerHTML = timer;
-
-      // last 10 secs changes to red
-      if (timer <= 10) {
-        htmlTimer.style.color = "#ff0800";
-      }
-
-      // stops counting @ 0
-      if (timer === 0) {
-        clearInterval(movingTimer);
-        htmlTimer.style.color = "#1c2841";
-      }
-    }, 1000);
-  }
-  countDownTimer();
-
-  // clears options for next question
-  function nextQuestion() {
-    const nextBtn = document.getElementById("nextBtn");
-    nextBtn.addEventListener("click", () => {
-      // clears answer colours
-      // optionA.style.backgroundColor = "#ffffe0";
-      // optionB.style.backgroundColor = "#ffffe0";
-      // optionB.style.backgroundColor = "#ffffe0";
-      // optionC.style.backgroundColor = "#ffffe0";
-      // optionD.style.backgroundColor = "#ffffe0";
-
-      // brings back clicking ability
-      document.getElementById("bodyId").style.pointerEvents = "auto";
-    });
-  }
-  nextQuestion();
-
-  // options by id
-  const optionA = document.getElementById("optionA");
-  const optionB = document.getElementById("optionB");
-  const optionC = document.getElementById("optionC");
-  const optionD = document.getElementById("optionD");
-
   // stores answers & questions
   function entireQuestionObjArr() {
     const questionObjArr = [
@@ -109,6 +62,48 @@ document.addEventListener("DOMContentLoaded", () => {
     return questionObjArr;
   }
 
+  // countdown timer
+  function countDownTimer() {
+    let timer = 60;
+    const htmlTimer = document.getElementById("htmlTimer");
+
+    // counts down
+    const movingTimer = setInterval(() => {
+      timer -= 1;
+      htmlTimer.innerHTML = timer;
+
+      // last 10 secs changes to red
+      if (timer <= 10) {
+        htmlTimer.style.color = "#ff0800";
+      }
+
+      // stops counting @ 0
+      if (timer === 0) {
+        clearInterval(movingTimer);
+        htmlTimer.style.color = "#1c2841";
+      }
+    }, 1000);
+  }
+  countDownTimer();
+
+  // clears options for next question
+  function nextQuestion() {
+    const nextBtn = document.getElementById("nextBtn");
+    nextBtn.addEventListener("click", () => {
+      // brings back clicking ability
+      document.getElementById("bodyId").style.pointerEvents = "auto";
+
+      // clears answer colours
+      // optionA.style.backgroundColor = "#ffffe0";
+      // optionB.style.backgroundColor = "#ffffe0";
+      // optionB.style.backgroundColor = "#ffffe0";
+      // optionC.style.backgroundColor = "#ffffe0";
+      // optionD.style.backgroundColor = "#ffffe0";
+    });
+  }
+  nextQuestion();
+
+  // main part of game
   function buildQuiz() {
     // stores question
     const theQuestion = [];
@@ -146,6 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   buildQuiz();
 
+  // displays wrong & right answers
   function checkForCorrectAnswer() {
     // choices arr via classes
     const choicesArr = document.getElementsByClassName("options");
@@ -169,45 +165,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   checkForCorrectAnswer();
-
-  /*
-  // gets selected choice
-  function selectedAnswer() {
-    // stores arr of options
-    const allOptionsArr = document.getElementsByClassName("options");
-
-    // selects 1 option
-    for (let i = 0; i < allOptionsArr.length; i++) {
-      // single option
-      const singleOption = allOptionsArr[i];
-
-      // calls obj function
-      allQuestions();
-      console.log(allQuestions()[0].answer);
-      console.log(singleOption.innerHTML);
-      console.log(
-        singleOption.innerHTML === allQuestions()[0].answer
-      );
-
-      singleOption.addEventListener("click", () => {
-        // change option's bg colour
-        if (singleOption.innerHTML === allQuestions()[0].answer) {
-          // right answer
-          singleOption.style.backgroundColor = "#3fff00";
-        } else {
-          // wrong answer
-          singleOption.style.backgroundColor = "#ff0800";
-          optionA.style.backgroundColor = "#3fff00";
-        }
-
-        // turn off clicking
-        optionA.style.pointerEvents = "none";
-        optionB.style.pointerEvents = "none";
-        optionC.style.pointerEvents = "none";
-        optionD.style.pointerEvents = "none";
-      });
-    }
-  }
-  selectedAnswer();
-  */
 });
