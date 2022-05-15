@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // combine output & put on html page
       const questionContainer = document.getElementById("questionContainer");
-      questionContainer.innerText = theQuestion[0];
+      questionContainer.innerText = theQuestion[1]; // index num needs dynamically changing
 
       // stores possible answers
       const possibleAnswers = [];
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // combine output & put on html page
       const choicesContainer = document.getElementById("choicesContainer");
-      choicesContainer.innerHTML = arrOfChoicesArr[0];
+      choicesContainer.innerHTML = arrOfChoicesArr[1];
 
       // console.log(possibleAnswers);
       arrOfChoicesArr.push(possibleAnswers.join(""));
@@ -150,7 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < choicesArr.length; i++) {
       const selectedChoice = choicesArr[i];
       selectedChoice.addEventListener("click", function () {
-        if (selectedChoice.innerText === entireQuestionObjArr()[0].answer) {
+        if (
+          selectedChoice.innerText.toLowerCase() ===
+          entireQuestionObjArr()[1].answer.toLowerCase() // index num needs dynamically changing
+        ) {
           // change colour if right
           selectedChoice.id = "correct";
           // remove clicking ability except for next btn
