@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // combine output & put on html page
       const questionContainer = document.getElementById("questionContainer");
-      questionContainer.innerText = theQuestion[1]; // index num needs dynamically changing
+      questionContainer.innerText = theQuestion[3]; // index num needs dynamically changing
 
       // stores possible answers
       const possibleAnswers = [];
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // combine output & put on html page
       const choicesContainer = document.getElementById("choicesContainer");
-      choicesContainer.innerHTML = arrOfChoicesArr[1];
+      choicesContainer.innerHTML = arrOfChoicesArr[3]; // index num needs dynamically changing
 
       // console.log(possibleAnswers);
       arrOfChoicesArr.push(possibleAnswers.join(""));
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
       selectedChoice.addEventListener("click", function () {
         if (
           selectedChoice.innerText.toLowerCase() ===
-          entireQuestionObjArr()[1].answer.toLowerCase() // index num needs dynamically changing
+          entireQuestionObjArr()[3].answer.toLowerCase() // index num needs dynamically changing
         ) {
           // change colour if right
           selectedChoice.id = "correct";
@@ -170,18 +170,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   checkForCorrectAnswer();
-
-  function showCorrectAnswerEveryTime() {
-    const choicesCollection = document.getElementsByClassName("options");
-
-    for (let i = 0; i < choicesCollection.length; i++) {
-      const singleChoice = choicesCollection[i];
-      singleChoice.addEventListener("click", () => {
-        console.log(typeof choicesCollection);
-
-        choicesCollection[1].id = "correct"; // index num needs dynamically changing
-      });
-    }
-  }
-  showCorrectAnswerEveryTime();
 });
