@@ -170,4 +170,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   checkForCorrectAnswer();
+
+  function showCorrectAnswerEveryTime() {
+    const choicesCollection = document.getElementsByClassName("options");
+
+    for (let i = 0; i < choicesCollection.length; i++) {
+      const singleChoice = choicesCollection[i];
+      singleChoice.addEventListener("click", () => {
+        console.log(typeof choicesCollection);
+
+        choicesCollection[1].id = "correct"; // index num needs dynamically changing
+      });
+    }
+  }
+  showCorrectAnswerEveryTime();
 });
