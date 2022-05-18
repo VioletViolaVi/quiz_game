@@ -153,6 +153,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function checkForCorrectAnswer() {
     // choices arr via classes
     const choicesArr = document.getElementsByClassName("options");
+    // for increasing scores
+    const scoreHTML = document.getElementById("score");
+    let incrementScore = 0;
 
     // checking if clicked choice is correct via iterating through choices arr
     for (let i = 0; i < choicesArr.length; i++) {
@@ -162,6 +165,10 @@ document.addEventListener("DOMContentLoaded", () => {
           selectedChoice.innerText.toLowerCase() ===
           entireQuestionObjArr()[3].answer.toLowerCase() // index num needs dynamically changing
         ) {
+          // increase score
+          incrementScore += 1;
+          scoreHTML.innerText = incrementScore;
+          console.log(incrementScore);
           // change colour if right
           selectedChoice.id = "correct";
           // remove clicking ability except for next btn
