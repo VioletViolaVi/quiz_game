@@ -95,10 +95,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // choices arr via classes
       const choicesArr = document.getElementsByClassName("options");
+
       // clears answer colours
       for (let i = 0; i < choicesArr.length; i++) {
         choicesArr[i].removeAttribute("id");
       }
+
+      // // increments to move to next question
+      // let questionCounter = 0;
+      // if (questionCounter < entireQuestionObjArr().length) {
+      //   questionCounter += 1;
+      //   console.log(questionCounter);
+      // }
     });
   }
   nextQuestion();
