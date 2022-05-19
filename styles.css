@@ -24,6 +24,7 @@ body {
   background-color: #c0c0c0;
   opacity: 0.5;
   position: absolute;
+  /* display: none; */
 }
 
 /**************************************************** quiz border */

@@ -86,17 +86,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   countDownTimer();
 
-  // modal
+  // toggles id on modal
   function displayModal() {
     const modal = document.getElementById("modal");
-    
+    modal.removeAttribute("id");
   }
-  displayModal();
 
   // clears options for next question
   function nextQuestion() {
     const nextBtn = document.getElementById("nextBtn");
     nextBtn.addEventListener("click", () => {
+      // removes modal
+      displayModal();
+
       // brings back clicking ability
       document.getElementById("bodyId").style.pointerEvents = "auto";
 
