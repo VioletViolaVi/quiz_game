@@ -16,6 +16,16 @@ body {
   background-color: #fff5ee;
 }
 
+/**************************************************** modal */
+#modal {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-color: #c0c0c0;
+  opacity: 0.5;
+  position: absolute;
+}
+
 /**************************************************** quiz border */
 .quiz-border {
   background-image: linear-gradient(to right, #fcffa4, #ffffe0);

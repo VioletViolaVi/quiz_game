@@ -86,6 +86,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   countDownTimer();
 
+  // modal
+  function displayModal() {
+    const modal = document.getElementById("modal");
+    
+  }
+  displayModal();
+
   // clears options for next question
   function nextQuestion() {
     const nextBtn = document.getElementById("nextBtn");
