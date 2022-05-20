@@ -17,20 +17,47 @@ body {
 }
 
 /**************************************************** modal */
-#modal {
+/* #modal {
   height: 100%;
   width: 100%;
   top: 0;
   background-color: #c0c0c0;
   opacity: 0.5;
   position: absolute;
-  /* display: none; */
-}
+  display: none;
+} */
 
 .end-game-info {
-  background-color: #fffacd;
-  position: absolute;
-  z-index: 2;
+  background-image: linear-gradient(to right, #fcffa4, #ffffe0);
+  width: 95%;
+  height: 40%;
+  position: fixed;
+  top: 13rem;
+  left: 0.5rem;
+  z-index: 1;
+  border-radius: 2rem;
+}
+
+.end-game-info p {
+  font-size: 3rem;
+  margin: 1.5rem 0;
+}
+
+.end-game-info button {
+  font-size: 2rem;
+  cursor: pointer;
+  outline: none;
+  width: 6rem;
+  height: 4rem;
+  background-color: #f8de7e;
+  border: none;
+  border-radius: 2rem;
+}
+
+.end-game-info button:hover {
+  background-color: #fdee00;
+  transition: 0.2s;
+  font-weight: 900;
 }
 
 /**************************************************** quiz border */
