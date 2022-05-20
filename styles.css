@@ -27,12 +27,18 @@ body {
   /* display: none; */
 }
 
+.end-game-info {
+  background-color: #fffacd;
+  position: absolute;
+  z-index: 2;
+}
+
 /**************************************************** quiz border */
 .quiz-border {
   background-image: linear-gradient(to right, #fcffa4, #ffffe0);
   border-radius: 1rem;
   border: solid 0.5rem #f0e68c;
-  margin: 4.38rem 0.5rem;
+  margin: 4.38rem 0.5rem 0;
 }
 
 @media (min-width: 600px) {
