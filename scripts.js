@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       },
     ];
-
     return questionObjArr;
   }
 
@@ -85,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, 1000);
   }
-  countDownTimer();
 
   // shows modal
   function showModal() {
@@ -95,8 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // removes modal
   function removeModal() {
     const restart = document.getElementById("restart");
+
+    // removes modal on click
     restart.addEventListener("click", () => {
       document.getElementById("modal").style.display = "none";
+
+      // starts timer
+      countDownTimer();
     });
   }
   removeModal();
@@ -105,9 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function nextQuestion() {
     const nextBtn = document.getElementById("nextBtn");
     nextBtn.addEventListener("click", () => {
-      // removes modal
-      displayModal();
-
       // brings back clicking ability
       document.getElementById("bodyId").style.pointerEvents = "auto";
 
