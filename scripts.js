@@ -81,19 +81,25 @@ document.addEventListener("DOMContentLoaded", () => {
       if (timer === 0) {
         clearInterval(movingTimer);
         htmlTimer.style.color = "#1c2841";
+        showModal();
       }
     }, 1000);
   }
   countDownTimer();
 
-  // toggles id on modal
-  function displayModal() {
+  // shows modal
+  function showModal() {
+    document.getElementById("modal").style.display = "block";
+  }
+
+  // removes modal
+  function removeModal() {
     const restart = document.getElementById("restart");
     restart.addEventListener("click", () => {
       document.getElementById("modal").style.display = "none";
     });
   }
-  displayModal();
+  removeModal();
 
   // clears options for next question
   function nextQuestion() {
