@@ -88,9 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // toggles id on modal
   function displayModal() {
-    const modal = document.getElementById("modal");
-    modal.removeAttribute("id");
+    const restart = document.getElementById("restart");
+    restart.addEventListener("click", () => {
+      document.getElementById("modal").style.display = "none";
+    });
   }
+  displayModal();
 
   // clears options for next question
   function nextQuestion() {
