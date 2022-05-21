@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // initial score
+  let incrementScore = 0;
+
   // stores answers & questions
   function entireQuestionObjArr() {
     const questionObjArr = [
@@ -100,6 +103,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // starts timer
       countDownTimer();
+
+      // resets scores
+      incrementScore = 0;
+      document.getElementById("scoreInModal").innerText = 0;
+      document.getElementById("score").innerText = 0;
     });
   }
   removeModal();
@@ -171,9 +179,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function checkForCorrectAnswer() {
     // choices arr via classes
     const choicesArr = document.getElementsByClassName("options");
+
+    // modal score
+    const scoreInModal = document.getElementById("scoreInModal");
+
     // for increasing scores
     const scoreHTML = document.getElementById("score");
-    let incrementScore = 0;
 
     // checking if clicked choice is correct via iterating through choices arr
     for (let i = 0; i < choicesArr.length; i++) {
@@ -185,8 +196,10 @@ document.addEventListener("DOMContentLoaded", () => {
         ) {
           // increase score
           incrementScore += 1;
+          // shows score in both score locations
           scoreHTML.innerText = incrementScore;
-          console.log(incrementScore);
+          scoreInModal.innerText = incrementScore;
+
           // change colour if right
           selectedChoice.id = "correct";
           // remove clicking ability except for next btn
