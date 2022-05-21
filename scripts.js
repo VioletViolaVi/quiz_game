@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   // initial score
-  let incrementScore = 0;
+  function initialScore() {
+    let incrementScore = 0;
+    return incrementScore;
+  }
+  initialScore();
 
   // stores answers & questions
   function entireQuestionObjArr() {
