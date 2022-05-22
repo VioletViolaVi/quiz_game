@@ -27,12 +27,12 @@ body {
 
 .end-game-info {
   background-image: linear-gradient(to right, #fcffa4, #ffffe0);
-  width: 95%;
-  height: 40%;
+  width: 90%;
+  height: 39%;
   position: fixed;
   top: 13rem;
-  left: 0.5rem;
   border-radius: 2rem;
+  margin: auto 1rem;
 }
 
 .end-game-info p {
@@ -55,6 +55,14 @@ body {
   background-color: #fdee00;
   transition: 0.2s;
   font-weight: 900;
+}
+
+@media (min-width: 600px) {
+  .end-game-info {
+    width: 28rem;
+    height: 18rem;
+    margin: auto 4.5rem;
+  }
 }
 
 /**************************************************** quiz border */
