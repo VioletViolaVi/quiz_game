@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // initial score
-  function initialScore() {
-    let incrementScore = 0;
-    return incrementScore;
-  }
-  initialScore();
+  let incrementScore = 0;
 
   // stores answers & questions
   function entireQuestionObjArr() {
@@ -70,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // countdown timer
   function countDownTimer() {
-    let timer = 60;
+    let timer = 5;
     const htmlTimer = document.getElementById("htmlTimer");
 
     // counts down
@@ -87,35 +83,49 @@ document.addEventListener("DOMContentLoaded", () => {
       if (timer === 0) {
         clearInterval(movingTimer);
         htmlTimer.style.color = "#1c2841";
-        showModal();
+        showRestartModal();
         timer = 60;
       }
     }, 1000);
   }
 
-  // shows modal
-  function showModal() {
+  // removes start modal
+  function removeStartModal() {
+    const startBtn = document.getElementById("startBtn");
+
+    startBtn.addEventListener("click", () => {
+      // takes modal away
+      document.getElementById("startModalBg").style.display = "none";
+
+      // starts timer
+      countDownTimer();
+    });
+  }
+  removeStartModal();
+
+  // shows restart modal
+  function showRestartModal() {
     document.getElementById("restartModalBg").style.display = "block";
   }
 
-  // removes modal
-  function removeModal() {
+  // removes restart modal
+  function removeRestartModal() {
     const restartBtn = document.getElementById("restartBtn");
 
     // removes modal on click
     restartBtn.addEventListener("click", () => {
       document.getElementById("restartModalBg").style.display = "none";
 
-      // starts timer
+      // restarts timer
       countDownTimer();
 
       // resets scores
       incrementScore = 0;
       document.getElementById("scoreInModal").innerText = 0;
-      document.getElementById("score").innerText = 0;
+      document.getElementById("scoreInFooter").innerText = 0;
     });
   }
-  removeModal();
+  removeRestartModal();
 
   // clears options for next question
   function nextQuestion() {
@@ -182,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const scoreInModal = document.getElementById("scoreInModal");
 
     // for increasing scores
-    const scoreHTML = document.getElementById("score");
+    const scoreHTML = document.getElementById("scoreInFooter");
 
     // checking if clicked choice is correct via iterating through choices arr
     for (let i = 0; i < choicesArr.length; i++) {
