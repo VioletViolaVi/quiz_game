@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // shows modal
   function showModal() {
-    document.getElementById("modal").style.display = "block";
+    document.getElementById("modalBg").style.display = "block";
   }
 
   // removes modal
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // removes modal on click
     restart.addEventListener("click", () => {
-      document.getElementById("modal").style.display = "none";
+      document.getElementById("modalBg").style.display = "none";
 
       // starts timer
       countDownTimer();
