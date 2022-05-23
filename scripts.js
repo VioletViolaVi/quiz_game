@@ -94,16 +94,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // shows modal
   function showModal() {
-    document.getElementById("modalBg").style.display = "block";
+    document.getElementById("restartModalBg").style.display = "block";
   }
 
   // removes modal
   function removeModal() {
-    const restart = document.getElementById("restart");
+    const restartBtn = document.getElementById("restartBtn");
 
     // removes modal on click
-    restart.addEventListener("click", () => {
-      document.getElementById("modalBg").style.display = "none";
+    restartBtn.addEventListener("click", () => {
+      document.getElementById("restartModalBg").style.display = "none";
 
       // starts timer
       countDownTimer();
