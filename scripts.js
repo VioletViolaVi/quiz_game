@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(movingTimer);
         htmlTimer.style.color = "#1c2841";
         showModal();
+        timer = 60;
       }
     }, 1000);
   }

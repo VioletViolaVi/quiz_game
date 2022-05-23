@@ -15,9 +15,9 @@ body {
   cursor: default;
   background-color: #fff5ee;
 }
+/**************************************************** BOTH modals */
 
-/**************************************************** restart modal */
-
+#startModalBg,
 #restartModalBg {
   background-color: rgba(0, 0, 0, 0.527);
   width: 100%;
@@ -28,10 +28,9 @@ body {
   position: fixed;
   top: 0;
   z-index: 1;
-  /* display: none; */
 }
 
-.end-game-info {
+.modal-info {
   background-image: linear-gradient(to right, #fcffa4, #ffffe0);
   border: 0.2rem solid #f0e68c;
   width: 100%;
@@ -39,12 +38,12 @@ body {
   padding: 1rem 2rem;
 }
 
-.end-game-info p {
+.modal-info p {
   font-size: 3rem;
   margin: 1rem 0;
 }
 
-.end-game-info button {
+.modal-info button {
   font-size: 2em;
   cursor: pointer;
   outline: none;
@@ -55,26 +54,32 @@ body {
   border-radius: 2rem;
 }
 
-.end-game-info button:hover {
+.modal-info button:hover {
   background-color: #fdee00;
   transition: 0.2s;
   font-weight: 900;
 }
 
 @media (min-width: 600px) {
-  .end-game-info {
+  .modal-info {
     padding: 2rem 5rem;
   }
 
-  .end-game-info p {
+  .modal-info p {
     font-size: 3.5rem;
   }
 
-  .end-game-info button {
+  .modal-info button {
     font-size: 2.5em;
     width: 10rem;
     height: 4rem;
   }
+}
+
+/**************************************************** restart modal */
+
+#restartModalBg {
+  display: none;
 }
 
 /**************************************************** quiz border */
