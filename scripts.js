@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // shows restart modal
   function showRestartModal() {
-    document.getElementById("restartModalBg").style.display = "block";
+    document.getElementById("restartModalBg").style.display = "grid";
   }
 
   // removes restart modal
