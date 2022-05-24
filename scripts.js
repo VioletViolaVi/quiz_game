@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // countdown timer
   function countDownTimer() {
-    let timer = 5;
+    let timer = 60;
     const htmlTimer = document.getElementById("htmlTimer");
 
     // counts down
@@ -193,14 +193,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // for increasing scores
     const scoreHTML = document.getElementById("scoreInFooter");
+ 
+    // for indexing through objects in "json" looking arr of objs
+    // let objIndexNum = 0; 
 
     // checking if clicked choice is correct via iterating through choices arr
     for (let i = 0; i < choicesArr.length; i++) {
+
       const selectedChoice = choicesArr[i];
+      // console.log("selectedChoice: ", selectedChoice);
+      // console.log("choicesArr: ", choicesArr);
+      console.log("choicesArr.length: ", choicesArr.length);
+      // console.log("objIndexNum++: ", objIndexNum++);
+      // console.log("HERE: ", entireQuestionObjArr()[i]);
+    
       selectedChoice.addEventListener("click", function () {
         if (
           selectedChoice.innerText.toLowerCase() ===
-          entireQuestionObjArr()[3].answer.toLowerCase() // index num needs dynamically changing
+          entireQuestionObjArr()[objIndexNum++].answer.toLowerCase() // index num needs dynamically changing
         ) {
           // increase score
           incrementScore += 1;
