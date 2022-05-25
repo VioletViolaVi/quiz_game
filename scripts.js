@@ -148,19 +148,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // main part of game
   function buildQuiz() {
     // stores question
-    const theQuestion = [];
+    const theQuestionsArr = [];
 
     // stores arr of possible answers arr
     const arrOfChoicesArr = [];
 
+    // combine output & put on html page
+    const questionContainer = document.getElementById("questionContainer");
+
     // for each question object
     entireQuestionObjArr().forEach((currentQuestionObj) => {
       // add to html
-      theQuestion.push(`${currentQuestionObj.question}`);
+      theQuestionsArr.push(currentQuestionObj.question);
 
       // combine output & put on html page
       const questionContainer = document.getElementById("questionContainer");
-      questionContainer.innerText = theQuestion[3]; // index num needs dynamically changing
+      questionContainer.innerText = theQuestionsArr[3]; // index num needs dynamically changing
 
       // stores possible answers
       const possibleAnswers = [];
@@ -177,7 +180,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const choicesContainer = document.getElementById("choicesContainer");
       choicesContainer.innerHTML = arrOfChoicesArr[3]; // index num needs dynamically changing
 
-      // console.log(possibleAnswers);
       arrOfChoicesArr.push(possibleAnswers.join(""));
     });
   }
@@ -193,44 +195,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // for increasing scores
     const scoreHTML = document.getElementById("scoreInFooter");
- 
-    // for indexing through objects in "json" looking arr of objs
-    // let objIndexNum = 0; 
 
     // checking if clicked choice is correct via iterating through choices arr
     for (let i = 0; i < choicesArr.length; i++) {
-
       const selectedChoice = choicesArr[i];
-      // console.log("selectedChoice: ", selectedChoice);
-      // console.log("choicesArr: ", choicesArr);
-      console.log("choicesArr.length: ", choicesArr.length);
-      // console.log("objIndexNum++: ", objIndexNum++);
-      // console.log("HERE: ", entireQuestionObjArr()[i]);
-    
-      selectedChoice.addEventListener("click", function () {
-        if (
-          selectedChoice.innerText.toLowerCase() ===
-          entireQuestionObjArr()[objIndexNum++].answer.toLowerCase() // index num needs dynamically changing
-        ) {
-          // increase score
-          incrementScore += 1;
-          // shows score in both score locations
-          scoreHTML.innerText = incrementScore;
-          scoreInModal.innerText = incrementScore;
 
-          // change colour if right
-          selectedChoice.id = "correct";
-          // remove clicking ability except for next btn
-          document.getElementById("bodyId").style.pointerEvents = "none";
-          document.getElementById("nextBtn").style.pointerEvents = "auto";
-        } else {
-          // change colour if wrong
-          selectedChoice.id = "wrong";
-          // remove clicking ability except for next btn
-          document.getElementById("bodyId").style.pointerEvents = "none";
-          document.getElementById("nextBtn").style.pointerEvents = "auto";
-        }
-      });
+      for (let j = 0; j < entireQuestionObjArr().length; j++) {
+        // start index for "json-looking" arr of objs
+        let objIndexNum = 0;
+        // indexes through "json-looking" arr of objs
+        objIndexNum += 1;
+
+        // when option is clicked
+        selectedChoice.addEventListener("click", function () {
+          if (
+            selectedChoice.innerText.toLowerCase() ===
+            entireQuestionObjArr()[j].answer.toLowerCase() // index num needs dynamically changing
+          ) {
+            // increase score
+            incrementScore += 1;
+            // shows score in both score locations
+            scoreHTML.innerText = incrementScore;
+            scoreInModal.innerText = incrementScore;
+
+            // change colour if right
+            selectedChoice.id = "correct";
+            // remove clicking ability except for next btn
+            document.getElementById("bodyId").style.pointerEvents = "none";
+            document.getElementById("nextBtn").style.pointerEvents = "auto";
+          } else {
+            // change colour if wrong
+            selectedChoice.id = "wrong";
+            // remove clicking ability except for next btn
+            document.getElementById("bodyId").style.pointerEvents = "none";
+            document.getElementById("nextBtn").style.pointerEvents = "auto";
+          }
+        });
+      }
     }
   }
   checkForCorrectAnswer();
